@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testing Referrer Link</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Testing Referrer Link</h1>
+  <button onclick="handleClick()">Copiar y redirigir</button>
+
+  <script>
+    function handleClick() {
+      const linkToCopy = "https://www.despegar.com.ar/actividades";
+      const redirectTo = "https://apps.apple.com/us/app/despegar-vuelos-y-hoteles/id511479725";
+
+      // Copiar al portapapeles
+      navigator.clipboard.writeText(linkToCopy).then(() => {
+        // Redirigir después de copiar
+        window.location.href = redirectTo;
+      }).catch(err => {
+        alert("Hubo un problema al copiar el enlace.");
+        console.error(err);
+      });
+    }
+  </script>
+</body>
+</html>
