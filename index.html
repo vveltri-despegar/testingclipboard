@@ -41,7 +41,7 @@
 
   <script>
     function handleClick() {
-      const linkToCopy = "https://www.despegar.com.ar/actividades";
+      const linkToCopy = window.location.href;
       const redirectTo = "https://apps.apple.com/us/app/despegar-vuelos-y-hoteles/id511479725";
 
       navigator.clipboard.writeText(linkToCopy).then(() => {
